@@ -18,15 +18,15 @@ def chat_with_ollama(prompt, model="tiny_model:latest"):
     }
     
     try:
-        print(f"🤖 Sending to {model}...")
+        print(f" Sending to {model}...")
         response = requests.post(url, json=payload, timeout=60)
         response.raise_for_status()
         return response.json().get("response", "No response")
     except Exception as e:
-        return f"❌ Error: {str(e)}"
+        return f" Error: {str(e)}"
 
 
 if __name__ == "__main__":
     # Simple example
-    answer = chat_with_ollama("What is AI in one sentence?")
+    answer = chat_with_ollama("What did you mean by molecular Dynamics")
     print(answer)
